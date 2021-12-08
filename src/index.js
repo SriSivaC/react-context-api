@@ -4,6 +4,11 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 let ExplitiveContext = React.createContext("shit");
+let ContextValues = React.createContext(
+  props => <h1>
+    Hi {props.name}
+  </h1>
+);
 // const OrganizationContext = React.createContext();
 // const PersonContext = React.createContext();
 
@@ -42,6 +47,11 @@ const App = () => (
     <GrandmasHouse>
       <ContextualExclamation />
     </GrandmasHouse>
+    <ContextValues.Consumer>
+      {
+        Value => <Value name="That Person" />
+      }
+    </ContextValues.Consumer>
   </div>
 )
 
